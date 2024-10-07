@@ -4,13 +4,14 @@ const port = 8000;
 const cors = require('cors');
 const bodyParser = require('body-parser');
 const mongoose = require('mongoose');
-const dotenv = require('dotenv');
+const {connectMongoDB} = require('./databases/mongoDb/connectMongoDB');
 
 require('dotenv').config();
 
 app.use(cors());
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: true }));
+connectMongoDB();
 app.use('/', require('./routes/postTransactionRoute'));
 
 
