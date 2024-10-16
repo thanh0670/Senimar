@@ -1,0 +1,56 @@
+body {
+    font-family: Arial, sans-serif;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+    background-color: #f4f4f4;
+}
+
+.atm-container {
+    background-color: #333;
+    color: #fff;
+    padding: 20px;
+    border-radius: 10px;
+    width: 300px;
+    text-align: center;
+}
+
+.balance-display, .amount-display {
+    margin-bottom: 20px;
+}
+
+.mode-selector button {
+    background-color: #007bff;
+    color: white;
+    border: none;
+    padding: 10px 15px;
+    margin: 5px;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.atm-keypad {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 10px;
+    margin-bottom: 20px;
+}
+
+.keypad-btn, #clearBtn, #enterBtn {
+    background-color: #555;
+    color: white;
+    border: none;
+    padding: 15px;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+#clearBtn, #enterBtn {
+    grid-column: span 2;
+}
+
+.keypad-btn:hover, #clearBtn:hover, #enterBtn:hover, .mode-selector button:hover {
+    background-color: #444;
+}

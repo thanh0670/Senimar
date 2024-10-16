@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ATM Transaction</title>
+    <link rel="stylesheet" href="transaction.css">
+</head>
+<body>
+    <div class="atm-container">
+        <h2>ATM Transaction</h2>
+
+        <!-- Hiển thị số dư hiện tại -->
+        <div class="balance-display">
+            <p>Balance: $<span id="balanceAmount">1000.00</span></p>
+        </div>
+
+        <!-- Chọn mode: Nạp hoặc Rút tiền -->
+        <div class="mode-selector">
+            <button id="topupMode">topup</button>
+            <button id="withdrawMode">Withdraw</button>
+        </div>
+
+        <!-- Hiển thị số tiền người dùng nhập -->
+        <div class="amount-display">
+            <p>Amount: $<span id="enteredAmount">0</span></p>
+        </div>
+
+        <!-- Bàn phím nhập số tiền -->
+        <div class="atm-keypad">
+            <button class="keypad-btn">1</button>
+            <button class="keypad-btn">2</button>
+            <button class="keypad-btn">3</button>
+            <button class="keypad-btn">4</button>
+            <button class="keypad-btn">5</button>
+            <button class="keypad-btn">6</button>
+            <button class="keypad-btn">7</button>
+            <button class="keypad-btn">8</button>
+            <button class="keypad-btn">9</button>
+            <button class="keypad-btn">0</button>
+            <button id="clearBtn">Clear</button>
+            <button id="enterBtn">Enter</button>
+        </div>
+
+        <!-- Hiển thị kết quả -->
+        <p id="transactionMessage"></p>
+    </div>
+
+    <script src="transaction.js">
+        const urlParams = new URLSearchParams(window.location.search);
+  const balance = urlParams.get('balance');
+  
+  // Hiển thị số dư lên trang
+  document.getElementById('balance').textContent = balance;
+    </script>
+</body>
+</html>

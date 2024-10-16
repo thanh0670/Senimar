@@ -7,7 +7,7 @@
     "test": "echo \"Error: no test specified\" && exit 1",
     "start": "node index.js",
     "dev": "nodemon index.js",
-    "clearallmongodb" : "node ./scripts/clearAllMongoDB.js"
+    "clearallmongodb": "node ./scripts/clearAllMongoDB.js"
   },
   "author": "",
   "license": "ISC",

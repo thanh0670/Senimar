@@ -17,8 +17,6 @@ const clearAllData = async () => {
     finally{
         await mongoose.disconnect();
     }
-
-    
 };
 
 clearAllData();
