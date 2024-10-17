@@ -1,5 +1,5 @@
 document.addEventListener('DOMContentLoaded', function () {
-    let balance = 1000.00; // Số dư ban đầu
+    let balance = 1000; // Số dư ban đầu
     let enteredAmount = '';
     let transactionMode = ''; // 'deposit' hoặc 'withdraw'
 
@@ -34,7 +34,7 @@ document.addEventListener('DOMContentLoaded', function () {
 
     // Xử lý khi người dùng nhấn nút Enter
     document.getElementById('enterBtn').addEventListener('click', function () {
-        const amount = parseFloat(enteredAmount);
+        const amount = parseInt(enteredAmount);
         if (isNaN(amount) || amount <= 0) {
             transactionMessage.textContent = 'Invalid amount entered.';
             return;
@@ -42,20 +42,20 @@ document.addEventListener('DOMContentLoaded', function () {
 
         if (transactionMode === 'topup') {
             balance += amount;
-            transactionMessage.textContent = `toped up $${amount.toFixed(2)}`;
+            transactionMessage.textContent = `toped up $${amount.toLocaleString('en-US')}`;
         } else if (transactionMode === 'withdraw') {
             if (amount > balance) {
                 transactionMessage.textContent = 'Insufficient balance.';
             } else {
                 balance -= amount;
-                transactionMessage.textContent = `Withdrew $${amount.toFixed(2)}`;
+                transactionMessage.textContent = `Withdrew $${amount.toLocaleString('en-US')}`;
             }
         } else {
             transactionMessage.textContent = 'Please select a transaction mode.';
         }
 
         // Cập nhật số dư và reset số tiền nhập
-        balanceDisplay.textContent = balance.toFixed(2);
+        balanceDisplay.textContent = balance.toLocaleString('en-US');
         enteredAmount = '';
         enteredAmountDisplay.textContent = '0';
     });

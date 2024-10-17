@@ -22,7 +22,7 @@ const postTransaction = async (req, res) => {
     const savedTransaction = await postTransactionModel.create(decyptedTransaction);
     
     // Phản hồi về cho FE sau khi lưu thành công
-    const responseData = {
+    const responseTransactionData = {
       status: des.runEncrypt("Success", process.env.DES_KEY), // Mã hóa trạng thái
       id: des.runEncrypt(savedTransaction._id.toString(), process.env.DES_KEY), // Mã hóa ID
       cardNumber: des.runEncrypt(decyptedTransaction.cardNumber, process.env.DES_KEY), // Mã hóa cardNumber
@@ -31,8 +31,8 @@ const postTransaction = async (req, res) => {
       currency: des.runEncrypt(decyptedTransaction.currency.toString(), process.env.DES_KEY), // Mã hóa currency
     };
     
-    console.log('Dữ liệu phản hồi:', responseData); // Thêm dòng này để kiểm tra dữ liệu
-    res.send(responseData);
+    console.log('Dữ liệu phản hồi:', responseTransactionData); // Thêm dòng này để kiểm tra dữ liệu
+    res.send(responseTransactionData);
     
   } catch (error) {
     console.error('Lỗi khi lưu giao dịch:', error);
@@ -43,6 +43,8 @@ const postTransaction = async (req, res) => {
   }
   
 };
+
+
 
 module.exports = { postTransaction };
 
