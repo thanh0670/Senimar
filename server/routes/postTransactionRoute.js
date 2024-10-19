@@ -1,4 +1,5 @@
 const express = require('express');
+const { postTransaction, getTransaction } = require('../controllers/postTransactionController');
 const router = express.Router();
 
 // Định nghĩa route cho đăng nhập
@@ -16,6 +17,8 @@ router.post('/login', (req, res) => {
     data: { cardNumber, cardHolder },
   });
 });
+
+
 
 
 

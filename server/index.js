@@ -13,6 +13,7 @@ connectMongoDB();
 const Card = require("./models/mongodb/postTransactionModel");
 const postTransactionModel = require("./models/mongodb/postTransactionModel");
 
+
 // Middleware
 app.use(cors());
 app.use(bodyParser.json());
@@ -92,7 +93,7 @@ app.post('/postTransaction', async (req, res) => {
         });
 
         // Nếu tìm thấy thông tin hợp lệ trong DB
-        if (existingCard) {
+        if (existingCard) {``
             return res.json({ isValid: true, message: "Thông tin hợp lệ" });
         } else {
             // Nếu không tìm thấy thông tin hợp lệ
@@ -102,9 +103,14 @@ app.post('/postTransaction', async (req, res) => {
         console.error('Lỗi khi truy vấn DB:', error);
         return res.status(500).json({ isValid: false, message: 'Internal Server Error' });
     }
+
+    
 });
-
-
+//Xu ly yeu cau GET /getTransaction
+app.use('/getTransaction', async (req, res) => {
+    const transactions = await postTransactionModel.find();
+    res.send(transactions);
+});
 
 app.listen(port, () => {
     console.log(`Server running at http://localhost:${port}`);
