@@ -12,6 +12,7 @@ connectMongoDB();
 // Model giao dịch
 const Card = require("./models/mongodb/postTransactionModel");
 const postTransactionModel = require("./models/mongodb/postTransactionModel");
+const paymentModel = require("./models/mongodb/paymentModel");
 
 
 // Middleware
@@ -70,7 +71,7 @@ app.use(bodyParser.urlencoded({ extended: true }));
 //         return res.status(500).json({ isValid: false, message: 'Lỗi server' });
 //     }
 // });
-
+app.use(express.json());
 app.post('/postTransaction', async (req, res) => {
     const { cardNumber, cardHolder, expirationMM, expirationYY, CVV } = req.body;
   
@@ -111,6 +112,9 @@ app.use('/getTransaction', async (req, res) => {
     const transactions = await postTransactionModel.find();
     res.send(transactions);
 });
+
+
+app.use('/payment', require('./routes/paymentRoute'));
 
 app.listen(port, () => {
     console.log(`Server running at http://localhost:${port}`);
