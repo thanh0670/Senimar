@@ -54,7 +54,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
         if (mode === "topup") {
             try {
-                const response = await fetch("http://localhost:8000/api/topup", {
+                const response = await fetch("http://localhost:8000/payment", {
                     method: "POST",
                     headers: {
                         "Content-Type": "application/json",
@@ -81,7 +81,7 @@ document.addEventListener("DOMContentLoaded", () => {
             }
 
             try {
-                const response = await fetch("http://localhost:8000/api/withdraw", {
+                const response = await fetch("http://localhost:8000/payment", {
                     method: "POST",
                     headers: {
                         "Content-Type": "application/json",

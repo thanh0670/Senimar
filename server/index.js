@@ -102,8 +102,7 @@ app.use("/getTransaction", async (req, res) => {
   res.send(transactions);
 });
 
-app.use("/payment", require("../server/routes/paymentRoute.js"));
-app.use("api", require("../server/routes/paymentRoute.js"));
+app.use("/", require("../server/routes/paymentRoute.js"));
 
 app.listen(port, () => {
   console.log(`Server running at http://localhost:${port}`);
