@@ -1,34 +1,45 @@
-body {
+/* body {
     font-family: Arial, sans-serif;
     display: flex;
     justify-content: center;
     align-items: center;
     height: 100vh;
     margin: 0;
-    background-color: #f4f4f4;
+    background-image: linear-gradient(#A68ED2, #F274E1);
 }
 
 .atm-container {
-    background-color: #333;
-    color: #fff;
+    background-image: linear-gradient(#A68ED2, #F274E1);
+    color: #333;
     padding: 20px;
     border-radius: 10px;
     width: 300px;
     text-align: center;
+
 }
 
 .balance-display, .amount-display {
     margin-bottom: 20px;
+    color: #333;
+}
+
+.amount-display{
+    width: 300px;
 }
 
 .mode-selector button {
     background-color: #007bff;
-    color: white;
+    color: #333;
     border: none;
     padding: 10px 15px;
     margin: 5px;
     border-radius: 5px;
     cursor: pointer;
+    width: 120px;
+    font-family: 'Times New Roman', Times, serif;
+    font-weight: 600;
+    font-size: 16px;
+    height: 45px;
 }
 
 .atm-keypad {
@@ -45,12 +56,282 @@ body {
     padding: 15px;
     border-radius: 5px;
     cursor: pointer;
+    width: 95px;
 }
 
-#clearBtn, #enterBtn {
+#clearBtn{
+    width: 200px;
     grid-column: span 2;
+}
+
+#enterBtn{
+    width: 300px;
+    grid-column: span 3;
 }
 
 .keypad-btn:hover, #clearBtn:hover, #enterBtn:hover, .mode-selector button:hover {
     background-color: #444;
+} */
+
+body {
+    font-family: Arial, sans-serif;
+    background-image: linear-gradient(#A68ED2, #F274E1);
+    margin: 0;
+    padding: 0;
+    outline: none;
+    /* display: flex;
+    flex-direction: column; */
+    /* height: 100vh; */
+    /* box-sizing: border-box; */
+}
+
+.wrapper{
+    width: 100vw;
+    height: 930px;
+    display: flex;
+    flex-direction: column;
+}
+
+.wrapper-atm{
+    width: 100vw;
+    height: 824px;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+}
+
+.wrapper-enter-number{
+    width: 689px;
+    height: 388px;
+    display: flex;
+    flex-direction: row;
+}
+
+.wrapper-enter-number-1{
+    width: 610px;
+    height: 388px;
+}
+
+.container-enter-number{
+    width: 610px;
+    height: 280px;
+    display: flex;
+    flex-direction: column;
+}
+
+.container-close-money{
+    width: 610px;
+    height: 80px;
+    display: flex;
+    flex-direction: row;
+}
+
+.container-close{
+    width: 525px;
+    height: 80px;
+    color: #333;
+    font-size: 55px;
+    margin-top: 10px;
+    font-weight: bold; /* Chữ đậm */
+    transition: opacity 0.3s ease;
+}
+
+.container-img-eye{
+    width: 60px;
+    height: 60px;
+    cursor: pointer;
+}
+
+
+.container-input-money{
+    width: 610px;
+    height: 120px;
+    border: 3px solid #333;
+    border-radius: 10px;
+    background-color: #2e86de;
+    display: flex;
+    flex-direction: row; 
+    position: relative;
+}
+
+.container-svg-money{
+    width: 30px;
+    height: 120px;
+    margin-left: 20px;
+}
+
+.svg-money{
+    width: 30px;
+    height: 120px;
+    cursor: pointer;
+}
+
+.container-text-money{
+    width: 580px;
+    height: 120px;
+    text-align: center;
+    margin-top: 45px;
+    margin-left: 250px;
+    font-size: 22px;
+    color: #333;
+}
+
+.container-text-enter-money{
+    width: 610px;
+    height: 80px;
+    margin-top: 30px;
+    font-size: 25px;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+.container-button{
+    width: 610px;
+    height: 108px;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+
+.container-button-topup{
+    width: 170px;
+    height: 85px;
+    margin-top: 15px;
+}
+
+.button-topup{
+    width: 170px;
+    height: 85px;
+    border: 0 solid #333;
+    border-radius: 15px;
+    background-color: #dfe6e9;
+    font-size: 22px;
+}
+
+.container-button-withdraw{
+    width: 170px;
+    height: 108px;
+    margin-top: 15px;
+}
+
+.button-withdraw{
+    width: 170px;
+    height: 85px;
+    border: 0 solid #333;
+    border-radius: 15px;
+    background-color: #dfe6e9;
+    font-size: 22px;
+}
+
+.container-button-enter{
+    width: 170px;
+    height: 108px;
+    margin-top: 15px;
+}
+
+.button-enter{
+    width: 170px;
+    height: 85px;
+    border: 0 solid #333;
+    border-radius: 15px;
+    background-color: #dfe6e9;
+    font-size: 22px;
+}
+
+.wrapper-button-back{
+    width: 100vw;
+    height: 156px;
+    border-top: 1px solid #333;
+}
+
+.container-button-back{
+    width: 170px;
+    height: 85px;
+    background-color: #dcdde1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 15px;
+    margin-top: 35px;
+    margin-left: 60px;
+    cursor: pointer;
+}
+
+.svg-back{
+    width: 85px;
+    height: 65px;
+}
+
+.wrapper-enter-number-2{
+    width: 79px;
+    height: 388px;
+}
+
+.enter-number-2{
+    width: 14px;
+    height: 388px;
+    background-color:#3D9DE380;
+    margin-left: 35px;
+}
+
+.wrapper-number{
+    width: 450px;
+    height: 388px;
+    display: flex;
+    flex-direction: row;
+}
+
+.wrapper-number-1{
+    width: 150px;
+    height: 388px;
+    display: flex;
+    flex-direction: column;
+    margin-left: 60px;
+    align-items: center;
+}
+
+button{
+    width: 80px;
+    height: 80px;
+    outline: none;
+    border-radius: 100px;
+    font-size: 44px;
+    background-color: #ced6e0;
+    cursor: pointer;
+}
+
+.button-number {
+    cursor: pointer;
+}
+
+.button-number-1{
+    margin-top: 20px;
+    cursor: pointer;
+}
+
+.wrapper-number-2{
+    width: 150px;
+    height: 388px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.wrapper-number-3{
+    width: 150px;
+    height: 388px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.svg-button-number{
+    width: 50px;
+    height: 50px;
+    margin-top: 5px;
+    cursor: pointer;
+}
+
+.hidden {
+    display: none;
 }

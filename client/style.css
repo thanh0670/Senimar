@@ -1,47 +1,149 @@
 body {
-    font-family: Arial, sans-serif;
-  }
-  
-  .container {
-    max-width: 500px;
-    margin: 50px auto;
-    padding: 20px;
-    border: 1px solid #ddd;
-    border-radius: 10px;
-    background-color: #f9f9f9;
-  }
-  
-  h2 {
-    text-align: center;
-  }
-  
-  .form-group {
-    margin-bottom: 15px;
-  }
-  
-  label {
-    display: block;
-    margin-bottom: 5px;
-  }
-  
-  input, select {
-    width: 100%;
-    padding: 8px;
-    margin: 0;
-    box-sizing: border-box;
-  }
-  
-  button {
-    width: 100%;
-    padding: 10px;
-    background-color: #28a745;
-    color: white;
-    border: none;
-    border-radius: 5px;
-    cursor: pointer;
-  }
-  
-  button:hover {
-    background-color: #218838;
-  }
-  
+  font-family: Arial, sans-serif;
+  margin: 0;
+  padding: 0;
+  outline: none;
+}
+
+.container {
+  width: 100vw;
+  height: 100vh;
+  /* margin: 50px auto;
+  padding: 20px; */
+  /* border: 1px solid #ddd;
+  border-radius: 10px; */
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  background-image: linear-gradient(#A68ED2, #F274E1);
+}
+
+.wrapper-form-group{
+  width: 1000px;
+  height: 450px;
+  display: flex;
+  flex-direction: column;
+}
+
+h2{
+  text-align: center;
+  font-family: 'Times New Roman', Times, serif;
+  font-size: 45px;
+  font-weight: 600;
+}
+
+.form-group{
+  width: 1000px;
+  height: 150px;
+}
+
+.text-1{
+  font-family: 'Courier New', Courier, monospace;
+  font-size: 32px;
+  font-weight: 500;
+}
+
+.text-2{
+  font-size: 25px;
+  font-family: 'Times New Roman', Times, serif;
+}
+
+.input-1{
+  width: 700px;
+  height: 60px;
+  border-radius: 15px;
+  background-color: #D9D9D9;
+  font-size: 28px;
+  font-weight: 500;
+  padding-left: 15px;
+}
+
+.container-input{
+  width: 700px;
+  height: 60px;
+  margin-top: 20px;
+}
+
+
+button {
+  width: 100%;
+  padding: 10px;
+  background-color: #28a745;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+/* button:hover {
+  background-color: #218838;
+} */
+
+button:hover{
+  background-color: pink;
+}
+
+.container-form-group{
+  width: 790px;
+  height: 110px;
+  display: flex;
+  flex-direction: row;
+  margin-top: 10px;
+}
+
+.container-input-mm{
+  width: 180px;
+  height: 50px;
+  margin-top: 15px;
+}
+
+.input-mm{
+  width: 170px;
+  height: 50px;
+  border-radius: 15px;
+  background-color: #D9D9D9;
+  font-size: 20px;
+  padding-left: 15px;
+}
+
+.container-input-cvv{
+  width: 170px;
+  height: 50px;
+  margin-top: 15px;
+}
+
+.input-cvv{
+  width: 170px;
+  height: 50px;
+  border-radius: 15px;
+  background-color: #D9D9D9;
+  font-size: 20px;
+  padding-left: 15px;
+}
+
+.wrapper-button-1{
+  width: 715px;
+  height: 60px;
+  display: flex;
+  justify-content: flex-end;
+  align-items: flex-end;
+}
+
+.container-button-1{
+  width: 170px;
+  height: 60px;
+
+}
+
+.button-1{
+  width: 170px;
+  height: 60px;
+  border-radius: 10px;
+  background-color: #D9D9D9;
+  cursor: pointer;
+  color: #333;
+  font-weight: 600;
+  font-size: 22px;
+  font-family: 'Times New Roman', Times, serif;
+}

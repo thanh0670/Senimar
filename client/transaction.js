@@ -6,6 +6,7 @@ document.addEventListener("DOMContentLoaded", () => {
     const balanceDisplay = document.getElementById("balanceAmount");
     const enteredAmountDisplay = document.getElementById("enteredAmount");
     const transactionMessage = document.getElementById("transactionMessage");
+    const backButton = document.querySelector('.container-button-back');
 
     const updateBalanceDisplay = () => {
         balanceDisplay.innerText = balance.toFixed(2);
@@ -59,7 +60,7 @@ document.addEventListener("DOMContentLoaded", () => {
                     headers: {
                         "Content-Type": "application/json",
                     },
-                    body: JSON.stringify({ transactionType: mode, amount, balance }),
+                    body: JSON.stringify({ transactionType: mode, amount:String(amount), balance:String(balance) }),
                 });
 
                 const result = await response.json();
@@ -105,5 +106,10 @@ document.addEventListener("DOMContentLoaded", () => {
 
         currentAmount = "";
         updateEnteredAmountDisplay();
+    });
+
+    const Button = document.getElementById('backButton');
+    backButton.addEventListener('click', () => {
+        window.location.href = 'index.html'; 
     });
 });

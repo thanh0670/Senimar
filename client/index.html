@@ -8,29 +8,48 @@
 </head>
 <body>
   <div class="container">
-    <h2>Enter Card Information</h2>
+    <h2>ENTER CARD INPFORMATION</h2>
     <form id="payment-form">
-      <div class="form-group">
-        <label for="cardNumber">Card Number:</label>
-        <input type="text" id="cardNumber" name="cardNumber" required>
+      <div class="wrapper-form-group">
+        <div class="form-group">
+          <label class="text-1" for="cardNumber">CARD NUMBER</label>
+          <div class="container-input">
+            <input class="input-1" type="text" id="cardNumber" namenpm="cardNumber" required>
+          </div>
+        </div>
+        <div class="form-group">
+          <label class="text-1" for="cardHolder">CARD HOLDER</label>
+          <div class="container-input">
+            <input  class="input-1" type="text" id="cardHolder" name="cardHolder" required>
+          </div>
+        </div>
+        <div class="container-form-group">
+          <div class="form-group">
+            <label class="text-2" for="expirationMM">EXPIRATION MM</label>
+            <div class="container-input-mm">
+              <input class="input-mm" type="text" id="expirationMM" name="expirationMM" required>
+            </div>
+          </div>
+          <div class="form-group">
+            <label class="text-2" for="expirationYY">EXPIRATION YY</label>
+            <div class="container-input-mm">
+              <input class="input-mm" type="text" id="expirationYY" name="expirationYY" required>
+            </div>
+          </div>
+          <div class="form-group">
+            <label class="text-2" for="CVV">CVV</label>
+            <div class="container-input-cvv">
+              <input class="input-cvv" type="text" id="CVV" name="CVV" required>
+            </div>
+          </div>  
+        </div>
       </div>
-      <div class="form-group">
-        <label for="cardHolder">Card Holder:</label>
-        <input type="text" id="cardHolder" name="cardHolder" required>
+      <div class="wrapper-button-1">
+        <div class="container-button-1">
+          <button class="button-1" type="submit">SUBMIT</button>
+        </div>
       </div>
-      <div class="form-group">
-        <label for="expirationMM">Expiration Month (MM):</label>
-        <input type="text" id="expirationMM" name="expirationMM" required>
-      </div>
-      <div class="form-group">
-        <label for="expirationYY">Expiration Year (YY):</label>
-        <input type="text" id="expirationYY" name="expirationYY" required>
-      </div>
-      <div class="form-group">
-        <label for="CVV">CVV:</label>
-        <input type="text" id="CVV" name="CVV" required>
-      </div>
-      <button type="submit">Submit</button>
+      
     </form>
     <div id="error-message" class="error-message"></div>
     <div id="response" class="response"></div>
@@ -39,3 +58,4 @@
   <script type="module" src="script.js"></script>
 </body>
 </html>
+

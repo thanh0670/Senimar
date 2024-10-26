@@ -3,27 +3,138 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>ATM Transaction</title>
+    <title>ATM TRANSACTION</title>
     <link rel="stylesheet" href="transaction.css">
 </head>
 <body>
-    <div class="atm-container">
-        <h2>ATM Transaction</h2>
 
-        <div class="balance-display">
+    <div class="wrapper">
+        <div class="wrapper-atm">
+            <div class="wrapper-enter-number">
+                <div class="wrapper-enter-number-1">
+                    <div class="container-enter-number">
+                        <div class="container-close-money">
+                            <div class="container-close">
+                                
+                                <!-- ****** -->
+                                <!-- <span id="hidden-amount">******</span> -->
+                                <span id="amount" class="hidden"></span>
+                                <span id="balanceAmount"></span>
+                            </div>
+                            <div class="container-img-eye">
+                                <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><g id="SVGRepo_bgCarrier" stroke-width="0"></g><g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g><g id="SVGRepo_iconCarrier"> <path d="M5.70711 19.7071L19.7071 5.70711C20.0976 5.31658 20.0976 4.68342 19.7071 4.29289C19.3166 3.90237 18.6834 3.90237 18.2929 4.29289L4.29289 18.2929C3.90237 18.6834 3.90237 19.3166 4.29289 19.7071C4.68342 20.0976 5.31658 20.0976 5.70711 19.7071Z" fill="#000000"></path> <path d="M12 5C13.2011 5 14.394 5.21361 15.5362 5.63535L13.9368 7.23482C13.2953 7.0777 12.6458 7 12 7C9.07319 7 6.06862 8.59614 4.09173 11.9487C4.74631 13.0987 5.52178 14.046 6.37447 14.7971L4.95845 16.2131C3.88666 15.248 2.93477 14.037 2.16029 12.5876C1.94361 12.1821 1.94637 11.6844 2.17003 11.2807C4.45796 7.15186 8.18777 5 12 5Z" fill="#000000"></path> <path d="M12 9C12.056 9 12.1117 9.00154 12.167 9.00457L9.00457 12.167C9.00154 12.1117 9 12.056 9 12C9 10.3431 10.3431 9 12 9Z" fill="#000000"></path> <path d="M14.9954 11.833L11.833 14.9954C11.8883 14.9985 11.944 15 12 15C13.6569 15 15 13.6569 15 12C15 11.944 14.9985 11.8883 14.9954 11.833Z" fill="#000000"></path> <path d="M12 17C11.355 17 10.7061 16.9216 10.0654 16.763L8.46807 18.3604C9.60812 18.7849 10.7998 19 12 19C15.8372 19 19.5882 16.8013 21.8397 12.5876C22.0564 12.1821 22.0536 11.6844 21.83 11.2807C21.0543 9.88089 20.1128 8.7083 19.0587 7.76977L17.6421 9.18635C18.4837 9.91776 19.2525 10.8366 19.9083 11.9487C17.9595 15.3724 14.939 17 12 17Z" fill="#000000"></path> </g></svg>
+                            </div>
+                        </div>
+                        <div class="container-input-money">
+                            <div class="container-svg-money">
+                                <svg class="svg-money" viewBox="0 -0.5 17 17" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" class="si-glyph si-glyph-money-$" fill="#000000"><g id="SVGRepo_bgCarrier" stroke-width="0"></g><g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g><g id="SVGRepo_iconCarrier"> <title>893</title> <defs> </defs> <g stroke="none" stroke-width="1" fill="none" fill-rule="evenodd"> <path d="M11.979,10.596 C11.979,8.901 10.621,7.492 8.968,7.215 L8.968,3.828 C9.472,3.984 9.993,4.023 10.203,4.498 C10.393,4.926 10.874,5.109 11.275,4.908 C11.678,4.706 11.848,4.194 11.659,3.765 C11.186,2.699 10.117,2.271 8.983,2.077 L8.983,0 L8,0 L8,2.066 C6.336,2.317 5.005,3.736 5.005,5.449 C5.005,7.159 6.329,8.576 8,8.832 L8,12.242 C7.464,12.094 6.967,12.044 6.748,11.547 C6.56,11.117 6.08,10.934 5.68,11.135 C5.276,11.336 5.104,11.846 5.292,12.276 C5.773,13.366 6.846,13.807 8.016,13.987 L8.016,16 L8.954,16 L8.954,13.979 C10.6,13.707 11.979,12.294 11.979,10.596 L11.979,10.596 Z M6.617,5.449 C6.617,4.675 7.215,4.025 8.03,3.816 L8.03,7.085 C7.215,6.874 6.617,6.225 6.617,5.449 L6.617,5.449 Z M8.961,12.223 L8.961,8.969 C9.776,9.194 10.371,9.834 10.371,10.596 C10.371,11.358 9.776,11.998 8.961,12.223 L8.961,12.223 Z" fill="#333" class="si-glyph-fill"> </path> </g> </g></svg>
+                            </div>
+                            <div class="container-text-money" id="enteredAmount">
+                                Enter money here
+                            </div>
+                        </div>
+                        <div class="container-text-enter-money">
+                            Enter money you want to top up
+                        </div>
+                    </div>
+                    <div class="container-button">
+                        <div class="container-button-topup">
+                            <button class="button-topup" id="topupMode">
+                                Top Up
+                            </button>
+                        </div>
+                        <div class="container-button-withdraw">
+                            <button class="button-withdraw" id="withdrawMode">
+                                Withdraw
+                            </button>
+                        </div>
+                        <div class="container-button-enter">
+                            <button class="button-enter" id="enterBtn">
+                                Enter
+                            </button>
+                        </div>
+                    </div>
+                </div>
+                <div class="wrapper-enter-number-2">
+                    <div class="enter-number-2">
+
+                    </div>
+                </div>
+
+            </div>
+            <div class="wrapper-number">
+                <div class="wrapper-number-1">
+                    <button class="button-number keypad-btn">1</button>
+                    <button class="button-number-1 keypad-btn">4</button>
+                    <button class="button-number-1 keypad-btn">7</button>
+                </div>
+                <div class="wrapper-number-2">
+                    <button class="button-number keypad-btn">2</button>
+                    <button class="button-number-1 keypad-btn">5</button>
+                    <button class="button-number-1 keypad-btn">8</button>
+                    <button class="button-number-1 keypad-btn">0</button>
+                </div>
+                <div class="wrapper-number-3">
+                    <button class="button-number keypad-btn">3</button>
+                    <button class="button-number-1 keypad-btn">6</button>
+                    <button class="button-number-1 keypad-btn">9</button>
+                    <button class="button-number-1" id="clearBtn">C</button>
+
+                    <!-- <button class="button-number-1">
+                        <svg class="svg-button-number" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" transform="rotate(270)"><g id="SVGRepo_bgCarrier" stroke-width="0"></g><g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g><g id="SVGRepo_iconCarrier"> <g id="Navigation / House_Close"> <path id="Vector" d="M10 15L12 13.0001M12 13.0001L14 11.0001M12 13.0001L10 11.0001M12 13.0001L14 15M4 16.8002V11.4522C4 10.9179 4 10.6506 4.06497 10.4019C4.12255 10.1816 4.2173 9.97307 4.34521 9.78464C4.48955 9.57201 4.69064 9.39569 5.09277 9.04383L9.89436 4.84244C10.6398 4.19014 11.0126 3.86397 11.4324 3.73982C11.8026 3.63035 12.1972 3.63035 12.5674 3.73982C12.9875 3.86406 13.3608 4.19054 14.1074 4.84383L18.9074 9.04383C19.3096 9.39569 19.5102 9.57201 19.6546 9.78464C19.7825 9.97307 19.8775 10.1816 19.9351 10.4019C20 10.6505 20 10.9184 20 11.4522V16.8037C20 17.9216 20 18.4811 19.7822 18.9086C19.5905 19.2849 19.2842 19.5906 18.9079 19.7823C18.4805 20.0001 17.9215 20.0001 16.8036 20.0001H7.19691C6.07899 20.0001 5.5192 20.0001 5.0918 19.7823C4.71547 19.5906 4.40973 19.2849 4.21799 18.9086C4 18.4807 4 17.9203 4 16.8002Z" stroke="#000000" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path> </g> </g></svg>
+                    </button> -->
+                </div>
+            </div>
+        </div>
+        <div class="wrapper-button-back">
+            <button class="container-button-back" id="backButton">
+                <svg  class="svg-back"width="152px" height="152px" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" fill="#000000"><g id="SVGRepo_bgCarrier" stroke-width="0"></g><g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g><g id="SVGRepo_iconCarrier"> <title></title> <g id="Complete"> <g id="arrow-left"> <g> <polyline data-name="Right" fill="none" id="Right-2" points="7.6 7 2.5 12 7.6 17" stroke="#333" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"></polyline> <line fill="none" stroke="#333" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" x1="21.5" x2="4.8" y1="12" y2="12"></line> </g> </g> </g> </g></svg>
+            </button>
+        </div>
+    </div>
+    
+    <script src="./transaction.js">
+
+    </script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    <!-- <div class="atm-container">
+        <h2>ATM TRANSACTION</h2> -->
+
+        <!-- Hiển thị số dư hiện tại -->
+        <!-- <div class="balance-display">
             <p>Balance: $<span id="balanceAmount">1000</span></p>
-        </div>
+        </div> -->
 
-        <div class="mode-selector">
-            <button id="topupMode">Topup</button>
-            <button id="withdrawMode">Withdraw</button>
-        </div>
+        <!-- Chọn mode: Nạp hoặc Rút tiền -->
+        <!-- <div class="mode-selector">
+            <button id="topupMode">TOPUP</button>
+            <button id="withdrawMode">WITHDRAW</button>
+        </div> -->
 
-        <div class="amount-display">
+        <!-- Hiển thị số tiền người dùng nhập -->
+        <!-- <div class="amount-display">
             <p>Amount: $<span id="enteredAmount">0</span></p>
-        </div>
+        </div> -->
 
-        <div class="atm-keypad">
+        <!-- Bàn phím nhập số tiền -->
+        <!-- <div class="atm-keypad">
             <button class="keypad-btn">1</button>
             <button class="keypad-btn">2</button>
             <button class="keypad-btn">3</button>
@@ -34,13 +145,20 @@
             <button class="keypad-btn">8</button>
             <button class="keypad-btn">9</button>
             <button class="keypad-btn">0</button>
-            <button id="clearBtn">Clear</button>
-            <button id="enterBtn">Enter</button>
-        </div>
+            <button id="clearBtn">CLEAR</button>
+            <button id="enterBtn">ENTER</button>
+        </div> -->
 
-        <p id="transactionMessage"></p>
-    </div>
+        <!-- Hiển thị kết quả -->
+        <!-- <p id="transactionMessage"></p>
+    </div> -->
 
-    <script type="module" src="transaction.js"></script>
+    <script src="transaction.js">
+        const urlParams = new URLSearchParams(window.location.search);
+  const balance = urlParams.get('balance');
+  
+  // Hiển thị số dư lên trang
+  document.getElementById('balance').textContent = balance;
+    </script>
 </body>
 </html>
