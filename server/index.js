@@ -13,6 +13,7 @@ connectMongoDB();
 const Card = require("./models/mongodb/postTransactionModel");
 const postTransactionModel = require("./models/mongodb/postTransactionModel");
 const paymentModel = require("./models/mongodb/paymentModel");
+const router = require('./routes/paymentRoute.js')
 
 // Middleware
 app.use(cors());
@@ -50,12 +51,12 @@ app.post("/postTransaction", async (req, res) => {
     // Mã hóa dữ liệu để lưu log
     const encryptedCardNumber = des.runEncrypt(cardNumber, process.env.DES_KEY);
     const encryptedCardHolder = des.runEncrypt(cardHolder, process.env.DES_KEY);
-    const encryptedExpirationMM = des.runEncrypt(expirationMM,process.env.DES_KEY );
-    const encryptedExpirationYY = des.runEncrypt(expirationYY,process.env.DES_KEY
+    const encryptedExpirationMM = des.runEncrypt(expirationMM, process.env.DES_KEY);
+    const encryptedExpirationYY = des.runEncrypt(expirationYY, process.env.DES_KEY
     );
     const encryptedCVV = des.runEncrypt(CVV, process.env.DES_KEY);
 
-    console.log("Encrypted data:", {cardNumber: encryptedCardNumber,cardHolder: encryptedCardHolder,expirationMM: encryptedExpirationMM,expirationYY: encryptedExpirationYY,CVV: encryptedCVV,});
+    console.log("Encrypted data:", { cardNumber: encryptedCardNumber, cardHolder: encryptedCardHolder, expirationMM: encryptedExpirationMM, expirationYY: encryptedExpirationYY, CVV: encryptedCVV, });
 
 
     //giải mã dữ liệu
@@ -68,7 +69,7 @@ app.post("/postTransaction", async (req, res) => {
     };
 
     console.log("Decrypted data:", decryptedTransaction);
-    
+
     // Tìm thông tin thẻ trong DB dựa trên cardNumber, cardHolder và các thông tin khác
     const existingCard = await postTransactionModel.findOne({
       cardNumber,
@@ -79,7 +80,8 @@ app.post("/postTransaction", async (req, res) => {
     });
 
     // Nếu tìm thấy thông tin hợp lệ trong DB
-    if (existingCard) {``;
+    if (existingCard) {
+      ``;
       return res.json({ isValid: true, message: "Thông tin hợp lệ" });
     } else {
       // Nếu không tìm thấy thông tin hợp lệ
@@ -87,7 +89,7 @@ app.post("/postTransaction", async (req, res) => {
         .status(400)
         .json({ isValid: false, message: "Thông tin không hợp lệ" });
     }
-  } 
+  }
   catch (error) {
     console.error("Lỗi khi truy vấn DB:", error);
     return res
@@ -102,8 +104,12 @@ app.use("/getTransaction", async (req, res) => {
   res.send(transactions);
 });
 
+
 app.use("/", require("../server/routes/paymentRoute.js"));
+app.use("/", router);
 
 app.listen(port, () => {
   console.log(`Server running at http://localhost:${port}`);
 });
+
+

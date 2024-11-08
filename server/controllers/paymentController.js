@@ -19,12 +19,12 @@ const payment = async (req, res) => {
     balance: des.runEncrypt(balance, process.env.DES_KEY),
   };
 
-  console.log('Du lieu da duoc ma hoa:',encryptedPayment);
+  console.log('Du lieu da duoc ma hoa:', encryptedPayment);
 
   try {
     // // Giải mã thông tin để kiểm tra
     const decryptedPayment = {
- 
+
       transactionType: des.runDecrypt(
         encryptedPayment.transactionType,
         process.env.DES_KEY
@@ -33,8 +33,8 @@ const payment = async (req, res) => {
       balance: des.runDecrypt(encryptedPayment.balance, process.env.DES_KEY),
     };
 
-    console.log('Du lieu giai ma',decryptedPayment);
-    
+    console.log('Du lieu giai ma', decryptedPayment);
+
 
     // Kiểm tra xem payment với cardNumber và cardHolder có tồn tại không
     const existingPayment = await postTransactionModel.find({

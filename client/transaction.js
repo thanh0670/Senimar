@@ -7,7 +7,8 @@ document.addEventListener("DOMContentLoaded", () => {
     const enteredAmountDisplay = document.getElementById("enteredAmount");
     const transactionMessage = document.getElementById("transactionMessage");
     const backButton = document.querySelector('.container-button-back');
-
+    const topupMode = document.getElementById('topupMode');
+    const withdrawMode = document.getElementById('withdrawMode');
     const updateBalanceDisplay = () => {
         balanceDisplay.innerText = balance.toFixed(2);
     };
@@ -16,12 +17,14 @@ document.addEventListener("DOMContentLoaded", () => {
         enteredAmountDisplay.innerText = currentAmount || "0";
     };
 
-    document.getElementById("topupMode").addEventListener("click", () => {
+    topupMode.addEventListener("click", () => {
         mode = "topup";
         transactionMessage.innerText = "Topup mode selected";
+        console.log("hello");
+
     });
 
-    document.getElementById("withdrawMode").addEventListener("click", () => {
+    withdrawMode.addEventListener("click", () => {
         mode = "withdraw";
         transactionMessage.innerText = "Withdraw mode selected";
     });
@@ -31,6 +34,8 @@ document.addEventListener("DOMContentLoaded", () => {
             if (currentAmount.length < 6) {
                 currentAmount += button.innerText;
                 updateEnteredAmountDisplay();
+                console.log(currentAmount);
+
             }
         });
     });
@@ -60,16 +65,21 @@ document.addEventListener("DOMContentLoaded", () => {
                     headers: {
                         "Content-Type": "application/json",
                     },
-                    body: JSON.stringify({ transactionType: mode, amount:String(amount), balance:String(balance) }),
+                    body: JSON.stringify({ transactionType: mode, amount: String(amount), balance: String(balance) }),
                 });
 
+
                 const result = await response.json();
-                if (result.success) {
+                if (result) {
                     balance += amount;
                     updateBalanceDisplay();
                     transactionMessage.innerText = "Topup successful!";
                 } else {
                     transactionMessage.innerText = "Topup failed.";
+                    console.log(result);
+                    console.log("hello");
+
+
                 }
             } catch (error) {
                 console.error("Error during topup:", error);
@@ -91,7 +101,7 @@ document.addEventListener("DOMContentLoaded", () => {
                 });
 
                 const result = await response.json();
-                if (result.success) {
+                if (result) {
                     balance -= amount;
                     updateBalanceDisplay();
                     transactionMessage.innerText = "Withdraw successful!";
@@ -110,6 +120,6 @@ document.addEventListener("DOMContentLoaded", () => {
 
     const Button = document.getElementById('backButton');
     backButton.addEventListener('click', () => {
-        window.location.href = 'index.html'; 
+        window.location.href = 'index.html';
     });
 });
