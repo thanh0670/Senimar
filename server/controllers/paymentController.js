@@ -10,8 +10,6 @@ const payment = async (req, res) => {
   const time = String(
     DateTime.now().setZone("Asia/Ho_Chi_Minh").toFormat("yyyy-MM-dd HH:mm:ss")
   );
-  console.log(req.body);
-  res.send(req.body);
   // Mã hóa dữ liệu giao dịch
   const encryptedPayment = {
     transactionType: des.runEncrypt(transactionType, process.env.DES_KEY),
@@ -35,6 +33,7 @@ const payment = async (req, res) => {
 
     console.log('Du lieu giai ma', decryptedPayment);
 
+    res.send(req.body);
 
     // Kiểm tra xem payment với cardNumber và cardHolder có tồn tại không
     const existingPayment = await postTransactionModel.find({
